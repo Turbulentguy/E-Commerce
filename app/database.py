@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session, declarative_base
+from sqlalchemy.orm import sessionmaker, declarative_base
 
 load_dotenv()
 
@@ -11,7 +11,7 @@ engine = create_engine(
     DATABASE_URL
 )
 
-SessionLocal = Session(
+SessionLocal = sessionmaker(
     autocommit = False,
     autoflush = False,
     bind = engine
