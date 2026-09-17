@@ -8,7 +8,7 @@ from app.schema.categories import CategoryCreate, CategoryCreateResponse, Catego
 from app.database import SessionLocal
 
 router = APIRouter(
-    tags = ["Category"]
+    tags = ["Categories"]
 )
 
 def get_db():
