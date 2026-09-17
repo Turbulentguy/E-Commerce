@@ -10,6 +10,8 @@ from app.models.orderitem import OrderItem
 from app.models.payment import Payment
 
 from app.routers import auth
+from app.routers import products
+from app.routers import categories
 
 Base.metadata.create_all(bind = engine)
 
@@ -22,3 +24,5 @@ def Root():
     }
 
 app.include_router(auth.router)
+app.include_router(products.router)
+app.include_router(categories.router)
