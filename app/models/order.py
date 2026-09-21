@@ -15,7 +15,7 @@ class Order(Base):
 
     id = Column(Integer, primary_key = True)
     user_id = Column(Integer, ForeignKey("User.id"), nullable = False)
-    status = Column(String(10), nullable = False)
+    status = Column(String(10), default = "Confirmed", nullable = False)
     total_price =  Column(Numeric(10, 2), nullable = False)
     shipping_address = Column(String, nullable = False)
     created_at = Column(DateTime, server_default = func.now())
