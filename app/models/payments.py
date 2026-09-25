@@ -17,10 +17,10 @@ class Payment(Base):
     id = Column(Integer, primary_key = True)
     order_id = Column(Integer, ForeignKey("Order.id"), nullable = False)
     amount = Column(Numeric(10, 2), nullable = False)
-    status = Column(String(10), nullable = False)
+    status = Column(String(10), default = "Pending", nullable = False)
     payment_method = Column(String(13), nullable = False)
     transaction_id = Column(String(255), unique = True, nullable = False)
-    paid_at = Column(DateTime, server_default = func.now())
+    paid_at = Column(DateTime, nullable = True)
     created_at = Column(DateTime, server_default = func.now())
 
     order = relationship("Order", back_populates = "payment")
