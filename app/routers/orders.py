@@ -266,3 +266,5 @@ def completeOrder(
             )
 
         query.status = "Completed"
+
+    db.commit()

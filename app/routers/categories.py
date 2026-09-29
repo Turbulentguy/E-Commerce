@@ -83,7 +83,7 @@ def updateCategory(
 
     return query
 
-@router.delete("/categories{category_id}")
+@router.delete("/categories/{category_id}")
 def deleteAllCategory(
     category_id: int,
     current_user: User = Depends(get_current_user),
